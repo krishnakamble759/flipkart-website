@@ -5,28 +5,25 @@ const files = fs.readdirSync('.').filter(f => f.endsWith('.html'));
 files.push('src/js/main.js');
 files.push('src/js/search-manager.js');
 files.push('src/js/cart-manager.js');
+files.push('src/js/product-list.js');
+files.push('src/js/product-detail.js');
 
 files.forEach(file => {
     if (!fs.existsSync(file)) return;
     let content = fs.readFileSync(file, 'utf8');
 
-    // Replace href="/...", src="/...", data-link='/...'
-    // Handle both double and single quotes
-    content = content.replace(/ href="\/(\w)/g, ' href="$1');
-    content = content.replace(/ href='\/(\w)/g, " href='$1");
-    content = content.replace(/ src="\/(\w)/g, ' src="$1');
-    content = content.replace(/ src='\/(\w)/g, " src='$1");
-    content = content.replace(/ data-link="\/(\w)/g, ' data-link="$1');
-    content = content.replace(/ data-link='\/(\w)/g, " data-link='$1");
+    // Fix absolute slashes first
+    content = content.replace(/(href|src|data-link)=["']\/(\w)/g, '$1="./$2"');
+    content = content.replace(/window\.location\.href\s*=\s*['"]\/(\w)/g, "window.location.href = './$1");
 
-    // Specifically for JS files where it might be window.location.href = '/...'
-    if (file.endsWith('.js')) {
-        content = content.replace(/window\.location\.href\s*=\s*['"]\/(\w)/g, match => match.replace('/', ''));
-    }
+    // Add ./ to rel links in HTML attributes
+    content = content.replace(/(href|src|data-link)=["'](?!http|https|#|mailto|tel|\.|\/)([\w\-\.\?\&%=]+)["']/g, '$1="./$2"');
 
-    // Fix the logo link specifically (if it's just href="/")
-    content = content.replace(/ href="\/"/g, ' href="./index.html"');
-    content = content.replace(/ href='\/'/g, " href='./index.html'");
+    // Add ./ to window.location.href strings that don't have it
+    content = content.replace(/window\.location\.href\s*=\s*['"](?!http|https|\.|\/)([\w\-\.\?\&%=]+)["']/g, "window.location.href = './$1'");
+
+    // Specifically fix home link
+    content = content.replace(/href=["']\/["']/g, 'href="./index.html"');
 
     fs.writeFileSync(file, content);
     console.log(`Fixed ${file}`);

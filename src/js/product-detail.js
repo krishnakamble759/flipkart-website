@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.history.length > 1) {
                 window.history.back();
             } else {
-                window.location.href = '/index.html';
+                window.location.href = './index.html';
             }
         });
     }
@@ -817,7 +817,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             if (btn.classList.contains('go-to-cart')) {
-                window.location.href = '/cart.html';
+                window.location.href = './cart.html';
                 return;
             }
 
@@ -853,7 +853,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (actionText === 'NOTIFY ME') {
                 showToast('We will notify you when this product is back in stock!');
             } else {
-                window.location.href = 'checkout.html';
+                window.location.href = './checkout.html';
             }
         });
     });
