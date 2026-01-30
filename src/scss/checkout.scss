@@ -260,24 +260,6 @@ body {
                                 }
                             }
 
-                            .continue-btn {
-                                width: 100%;
-                                background-color: $fk-orange;
-                                color: $text-white;
-                                border: none;
-                                padding: 16px;
-                                font-size: 16px;
-                                font-weight: 700;
-                                border-radius: 2px;
-                                cursor: pointer;
-                                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
-                                transition: 0.2s;
-
-                                &:hover {
-                                    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
-                                }
-                            }
-
                             .guest-checkout-label {
                                 margin-top: 24px;
                                 display: flex;
@@ -345,13 +327,32 @@ body {
 
                     .checkout-input {
                         padding: 12px;
-                        border: 1px solid $text-white;
+                        border: 1px solid $border-color;
                         border-radius: 2px;
                         width: 100%;
                         outline: none;
 
                         &:focus {
                             border-color: $sky-blue;
+                        }
+                    }
+
+                    .continue-btn {
+                        width: 100%;
+                        background-color: $fk-orange;
+                        color: $text-white;
+                        border: none;
+                        padding: 16px;
+                        font-size: 15px;
+                        font-weight: 600;
+                        border-radius: 2px;
+                        cursor: pointer;
+                        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+                        transition: 0.2s;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
                         }
                     }
 
