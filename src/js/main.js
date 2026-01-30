@@ -105,44 +105,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 const text = (nameText + ' ' + cardText).toLowerCase();
 
                 if (text.includes('camera') || text.includes('mirrorless') || text.includes('dslr')) {
-                    window.location.href = '/camera-list.html';
+                    window.location.href = 'camera-list.html';
                 } else if (text.includes('powerbank')) {
-                    window.location.href = '/product-list.html';
+                    window.location.href = 'product-list.html';
                 } else if (text.includes('epson')) {
-                    window.location.href = '/printer-list.html';
+                    window.location.href = 'printer-list.html';
                 } else if (text.includes('hp')) {
-                    window.location.href = '/hp-printer-list.html';
+                    window.location.href = 'hp-printer-list.html';
                 } else if (text.includes('shaver')) {
-                    window.location.href = '/shaver-list.html';
+                    window.location.href = 'shaver-list.html';
                 } else if (text.includes('monitor')) {
-                    window.location.href = '/monitor-list.html';
+                    window.location.href = 'monitor-list.html';
                 } else if (text.includes('cycle')) {
-                    window.location.href = '/cycle-list.html';
+                    window.location.href = 'cycle-list.html';
                 } else if (text.includes('microphone')) {
-                    window.location.href = '/microphone-list.html';
+                    window.location.href = 'microphone-list.html';
                 } else if (text.includes('stationery') || text.includes('stationary')) {
-                    window.location.href = '/stationary-list.html';
+                    window.location.href = 'stationary-list.html';
                 } else if (text.includes('headphones')) {
-                    window.location.href = '/headphone-list.html';
+                    window.location.href = 'headphone-list.html';
                 } else if (text.includes('helmet')) {
-                    window.location.href = '/helmet-list.html';
+                    window.location.href = 'helmet-list.html';
                 } else if (text.includes('tyre')) {
-                    window.location.href = '/tyre-list.html';
+                    window.location.href = 'tyre-list.html';
                 } else if (text.includes('cap') || text.includes('caps')) {
-                    window.location.href = '/caps-list.html';
+                    window.location.href = 'caps-list.html';
                 } else if (text.includes('bulb')) {
-                    window.location.href = '/emergency-bulb-list.html';
+                    window.location.href = 'emergency-bulb-list.html';
                 } else if (text.includes('light') || text.includes('emergency')) {
-                    window.location.href = '/emergency-light-list.html';
+                    window.location.href = 'emergency-light-list.html';
                 } else if (text.includes('carpet') || text.includes('rug')) {
-                    window.location.href = '/carpet-list.html';
+                    window.location.href = 'carpet-list.html';
                 } else if (text.includes('namkeen')) {
-                    window.location.href = '/namkeen-list.html';
+                    window.location.href = 'namkeen-list.html';
 
                 } else if (text.includes('bed') || text.includes('cover')) {
-                    window.location.href = '/bed-covers-list.html';
+                    window.location.href = 'bed-covers-list.html';
                 } else {
-                    window.location.href = '/product-detail.html';
+                    window.location.href = 'product-detail.html';
                 }
             });
         });
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = dataLink.replace(/'/g, '');
                     return;
                 }
-                window.location.href = '/product-detail.html';
+                window.location.href = 'product-detail.html';
             });
         });
     }
